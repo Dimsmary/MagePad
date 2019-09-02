@@ -1,4 +1,7 @@
-#include "Keyboard.h"
+#include <Keyboard.h>
+#include "FastLED.h"
+#define LED_PIN     0
+#define NUM_LEDS    64
 
 #define col1 2
 #define col2 3
@@ -20,124 +23,124 @@
 #define line14 0
 #define line15 22
 #define line16 23
-
+CRGB leds[64];
 
 //定义按键按放命令
-#define key11_release Keyboard.release('1');
-#define key11_press Keyboard.press('1');
-#define key12_press Keyboard.press('q');
-#define key12_release Keyboard.release('q');
-#define key13_press Keyboard.press('a');
-#define key13_release Keyboard.release('a');
-#define key14_press Keyboard.press('z');
-#define key14_release Keyboard.release('z');
+#define key11_release Keyboard.release('1');leds[0] = CRGB (0,0,0);FastLED.show();
+#define key11_press Keyboard.press('1');leds[0] = CRGB (133,0,133);FastLED.show();
+#define key12_press Keyboard.press('q');leds[7] = CRGB (133,0,133);FastLED.show();
+#define key12_release Keyboard.release('q');leds[7] = CRGB (0,0,0);FastLED.show();
+#define key13_press Keyboard.press('a');leds[8] = CRGB (133,0,133);FastLED.show();
+#define key13_release Keyboard.release('a');leds[8] = CRGB (0,0,0);FastLED.show();
+#define key14_press Keyboard.press('z');leds[15] = CRGB (133,0,133);FastLED.show();
+#define key14_release Keyboard.release('z');leds[15] = CRGB (0,0,0);FastLED.show();
 //2
-#define key21_release Keyboard.release('2');
-#define key21_press Keyboard.press('2');
-#define key22_press Keyboard.press('w');
-#define key22_release Keyboard.release('w');
-#define key23_press Keyboard.press('s');
-#define key23_release Keyboard.release('s');
-#define key24_press Keyboard.press('x');
-#define key24_release Keyboard.release('x');
+#define key21_release Keyboard.release('2');leds[1] = CRGB (0,0,0);FastLED.show();
+#define key21_press Keyboard.press('2');leds[1] = CRGB (133,0,133);FastLED.show();
+#define key22_press Keyboard.press('w');leds[6] = CRGB (133,0,133);FastLED.show();
+#define key22_release Keyboard.release('w');leds[6] = CRGB (0,0,0);FastLED.show();
+#define key23_press Keyboard.press('s');leds[9] = CRGB (133,0,133);FastLED.show();
+#define key23_release Keyboard.release('s');leds[9] = CRGB (0,0,0);FastLED.show();
+#define key24_press Keyboard.press('x');leds[14] = CRGB (133,0,133);FastLED.show();
+#define key24_release Keyboard.release('x');leds[14] = CRGB (0,0,0);FastLED.show();
 //3
-#define key31_release Keyboard.release('3');
-#define key31_press Keyboard.press('3');
-#define key32_press Keyboard.press('e');
-#define key32_release Keyboard.release('e');
-#define key33_press Keyboard.press('d');
-#define key33_release Keyboard.release('d');
-#define key34_press Keyboard.press('c');
-#define key34_release Keyboard.release('c');
+#define key31_release Keyboard.release('3');leds[2] = CRGB (0,0,0);FastLED.show();
+#define key31_press Keyboard.press('3');leds[2] = CRGB (133,0,133);FastLED.show();
+#define key32_press Keyboard.press('e');leds[5] = CRGB (133,0,133);FastLED.show();
+#define key32_release Keyboard.release('e');leds[5] = CRGB (0,0,0);FastLED.show();
+#define key33_press Keyboard.press('d');leds[10] = CRGB (133,0,133);FastLED.show();
+#define key33_release Keyboard.release('d');leds[10] = CRGB (0,0,0);FastLED.show();
+#define key34_press Keyboard.press('c');leds[13] = CRGB (133,0,133);FastLED.show();
+#define key34_release Keyboard.release('c');leds[13] = CRGB (0,0,0);FastLED.show();
 //4
-#define key41_release Keyboard.release('4');
-#define key41_press Keyboard.press('4');
-#define key42_press Keyboard.press('r');
-#define key42_release Keyboard.release('r');
-#define key43_press Keyboard.press('f');
-#define key43_release Keyboard.release('f');
-#define key44_press Keyboard.press('v');
-#define key44_release Keyboard.release('v');
+#define key41_release Keyboard.release('4');leds[3] = CRGB (0,0,0);FastLED.show();
+#define key41_press Keyboard.press('4');leds[3] = CRGB (133,0,133);FastLED.show();
+#define key42_press Keyboard.press('r');leds[4] = CRGB (133,0,133);FastLED.show();
+#define key42_release Keyboard.release('r');leds[4] = CRGB (0,0,0);FastLED.show();
+#define key43_press Keyboard.press('f');leds[11] = CRGB (133,0,133);FastLED.show();
+#define key43_release Keyboard.release('f');leds[11] = CRGB (0,0,0);FastLED.show();
+#define key44_press Keyboard.press('v');leds[12] = CRGB (133,0,133);FastLED.show();
+#define key44_release Keyboard.release('v');leds[12] = CRGB (0,0,0);FastLED.show();
 //5
-#define key51_release Keyboard.release('5');
-#define key51_press Keyboard.press('5');
-#define key52_press Keyboard.press('t');
-#define key52_release Keyboard.release('t');
-#define key53_press Keyboard.press('g');
-#define key53_release Keyboard.release('g');
-#define key54_press Keyboard.press('b');
-#define key54_release Keyboard.release('b');
+#define key51_release Keyboard.release('5');leds[16] = CRGB (0,0,0);FastLED.show();
+#define key51_press Keyboard.press('5');leds[16] = CRGB (133,0,133);FastLED.show();
+#define key52_press Keyboard.press('t');leds[23] = CRGB (133,0,133);FastLED.show();
+#define key52_release Keyboard.release('t');leds[23] = CRGB (0,0,0);FastLED.show();
+#define key53_press Keyboard.press('g');leds[24] = CRGB (133,0,133);FastLED.show();
+#define key53_release Keyboard.release('g');leds[24] = CRGB (0,0,0);FastLED.show();
+#define key54_press Keyboard.press('b');leds[31] = CRGB (133,0,133);FastLED.show();
+#define key54_release Keyboard.release('b');leds[31] = CRGB (0,0,0);FastLED.show();
 //6
-#define key61_release Keyboard.release('6');
-#define key61_press Keyboard.press('6');
-#define key62_press Keyboard.press('y');
-#define key62_release Keyboard.release('y');
-#define key63_press Keyboard.press('h');
-#define key63_release Keyboard.release('h');
-#define key64_press Keyboard.press('n');
-#define key64_release Keyboard.release('n');
+#define key61_release Keyboard.release('6');leds[17] = CRGB (0,0,0);FastLED.show();
+#define key61_press Keyboard.press('6');leds[17] = CRGB (133,133,0);FastLED.show();
+#define key62_press Keyboard.press('y');leds[22] = CRGB (133,133,0);FastLED.show();
+#define key62_release Keyboard.release('y');leds[22] = CRGB (0,0,0);FastLED.show();
+#define key63_press Keyboard.press('h');leds[25] = CRGB (133,133,0);FastLED.show();
+#define key63_release Keyboard.release('h');leds[25] = CRGB (0,0,0);FastLED.show();
+#define key64_press Keyboard.press('n');leds[30] = CRGB (133,133,0);FastLED.show();
+#define key64_release Keyboard.release('n');leds[30] = CRGB (0,0,0);FastLED.show();
+//7
+#define key71_release Keyboard.release('7');leds[18] = CRGB (0,0,0);FastLED.show();
+#define key71_press Keyboard.press('7');leds[18] = CRGB (133,133,0);FastLED.show();
+#define key72_press Keyboard.press('u');leds[21] = CRGB (133,133,0);FastLED.show();
+#define key72_release Keyboard.release('u');leds[21] = CRGB (0,0,0);FastLED.show();
+#define key73_press Keyboard.press('j');leds[26] = CRGB (133,133,0);FastLED.show();
+#define key73_release Keyboard.release('j');leds[26] = CRGB (0,0,0);FastLED.show();
+#define key74_press Keyboard.press('m');leds[29] = CRGB (133,133,0);FastLED.show();
+#define key74_release Keyboard.release('m');leds[29] = CRGB (0,0,0);FastLED.show();
+//8
+#define key81_release Keyboard.release('8');leds[19] = CRGB (0,0,0);FastLED.show();
+#define key81_press Keyboard.press('8');leds[19] = CRGB (133,133,0);FastLED.show();
+#define key82_press Keyboard.press('i');leds[20] = CRGB (133,133,0);FastLED.show();
+#define key82_release Keyboard.release('i');leds[20] = CRGB (0,0,0);FastLED.show();
+#define key83_press Keyboard.press('k');leds[27] = CRGB (133,133,0);FastLED.show();
+#define key83_release Keyboard.release('k');leds[27] = CRGB (0,0,0);FastLED.show();
+#define key84_press Keyboard.press(',');leds[28] = CRGB (133,133,0);FastLED.show();
+#define key84_release Keyboard.release(',');leds[28] = CRGB (0,0,0);FastLED.show();
 //
-#define key71_release Keyboard.release('7');
-#define key71_press Keyboard.press('7');
-#define key72_press Keyboard.press('u');
-#define key72_release Keyboard.release('u');
-#define key73_press Keyboard.press('j');
-#define key73_release Keyboard.release('j');
-#define key74_press Keyboard.press('m');
-#define key74_release Keyboard.release('m');
+#define key91_release Keyboard.release('9');leds[32] = CRGB (0,0,0);FastLED.show();
+#define key91_press Keyboard.press('9');leds[32] = CRGB (133,133,0);FastLED.show();
+#define key92_press Keyboard.press('o');leds[39] = CRGB (133,133,0);FastLED.show();
+#define key92_release Keyboard.release('o');leds[39] = CRGB (0,0,0);FastLED.show();
+#define key93_press Keyboard.press('l');leds[40] = CRGB (133,133,0);FastLED.show();
+#define key93_release Keyboard.release('l');leds[40] = CRGB (0,0,0);FastLED.show();
+#define key94_press Keyboard.press('.');leds[47] = CRGB (133,133,0);FastLED.show();
+#define key94_release Keyboard.release('.');leds[47] = CRGB (0,0,0);FastLED.show();
 //
-#define key81_release Keyboard.release('8');
-#define key81_press Keyboard.press('8');
-#define key82_press Keyboard.press('i');
-#define key82_release Keyboard.release('i');
-#define key83_press Keyboard.press('k');
-#define key83_release Keyboard.release('k');
-#define key84_press Keyboard.press(',');
-#define key84_release Keyboard.release(',');
+#define key101_release Keyboard.release('0');leds[33] = CRGB (0,0,0);FastLED.show();
+#define key101_press Keyboard.press('0');leds[33] = CRGB (133,133,0);FastLED.show();
+#define key102_press Keyboard.press('p');leds[38] = CRGB (133,133,0);FastLED.show();
+#define key102_release Keyboard.release('p');leds[38] = CRGB (0,0,0);FastLED.show();
+#define key103_press Keyboard.press(';');leds[41] = CRGB (133,133,0);FastLED.show();
+#define key103_release Keyboard.release(';');leds[41] = CRGB (0,0,0);FastLED.show();
+#define key104_press Keyboard.press('/');leds[46] = CRGB (133,133,0);FastLED.show();
+#define key104_release Keyboard.release('/');leds[46] = CRGB (0,0,0);FastLED.show();
 //
-#define key91_release Keyboard.release('9');
-#define key91_press Keyboard.press('9');
-#define key92_press Keyboard.press('o');
-#define key92_release Keyboard.release('o');
-#define key93_press Keyboard.press('l');
-#define key93_release Keyboard.release('l');
-#define key94_press Keyboard.press('.');
-#define key94_release Keyboard.release('.');
+#define key111_release Keyboard.release('-');leds[34] = CRGB (0,0,0);FastLED.show();
+#define key111_press Keyboard.press('-');leds[34] = CRGB (133,133,0);FastLED.show();
+#define key112_press Keyboard.press('[');leds[37] = CRGB (133,133,0);FastLED.show();
+#define key112_release Keyboard.release('[');leds[37] = CRGB (0,0,0);FastLED.show();
+#define key113_press Keyboard.press(0x27);leds[42] = CRGB (133,133,0);FastLED.show();
+#define key113_release Keyboard.release(0x27);leds[42] = CRGB (0,0,0);FastLED.show();
+#define key114_press Keyboard.press(KEY_RIGHT_SHIFT);leds[45] = CRGB (133,133,0);FastLED.show();
+#define key114_release Keyboard.release(KEY_RIGHT_SHIFT);leds[45] = CRGB (0,0,0);FastLED.show();
 //
-#define key101_release Keyboard.release('0');
-#define key101_press Keyboard.press('0');
-#define key102_press Keyboard.press('p');
-#define key102_release Keyboard.release('p');
-#define key103_press Keyboard.press(';');
-#define key103_release Keyboard.release(';');
-#define key104_press Keyboard.press('/');
-#define key104_release Keyboard.release('/');
-//
-#define key111_release Keyboard.release('-');
-#define key111_press Keyboard.press('-');
-#define key112_press Keyboard.press('[');
-#define key112_release Keyboard.release('[');
-#define key113_press Keyboard.press(0x27);
-#define key113_release Keyboard.release(0x27);
-#define key114_press Keyboard.press(KEY_RIGHT_SHIFT);
-#define key114_release Keyboard.release(KEY_RIGHT_SHIFT);
-//
-#define key121_release Keyboard.release('=');
-#define key121_press Keyboard.press('=');
-#define key122_press Keyboard.press(']');
-#define key122_release Keyboard.release(']');
-#define key123_press Keyboard.press(0x0A);
-#define key123_release Keyboard.release(0x0A);
-#define key124_press Keyboard.press(KEY_RIGHT_SHIFT);
-#define key124_release Keyboard.release(KEY_RIGHT_SHIFT);
+#define key121_release Keyboard.release('=');leds[35] = CRGB (0,0,0);FastLED.show();
+#define key121_press Keyboard.press('=');leds[35] = CRGB (133,133,0);FastLED.show();
+#define key122_press Keyboard.press(']');leds[36] = CRGB (133,133,0);FastLED.show();
+#define key122_release Keyboard.release(']');leds[36] = CRGB (0,0,0);FastLED.show();
+#define key123_press Keyboard.press(0x0A);leds[43] = CRGB (133,133,0);FastLED.show();
+#define key123_release Keyboard.release(0x0A);leds[43] = CRGB (0,0,0);FastLED.show();
+#define key124_press Keyboard.press(KEY_RIGHT_SHIFT);leds[44] = CRGB (133,133,0);FastLED.show();
+#define key124_release Keyboard.release(KEY_RIGHT_SHIFT);leds[44] = CRGB (0,0,0);FastLED.show();
 //
 #define key131_release Keyboard.release(KEY_LEFT_ARROW);
-#define key131_press Keyboard.press(KEY_LEFT_ARROW);
-#define key132_press Keyboard.press(KEY_UP_ARROW);
+#define key131_press Keyboard.press(KEY_LEFT_ARROW);leds[48] = CRGB(random(255),random(255),random(255));leds[55] = CRGB(0,0,0);leds[56] = CRGB(0,0,0);leds[63] = CRGB(0,0,0);FastLED.show();
+#define key132_press Keyboard.press(KEY_UP_ARROW);leds[55] = CRGB(random(255),random(255),random(255));leds[48] = CRGB(0,0,0);leds[56] = CRGB(0,0,0);leds[63] = CRGB(0,0,0);FastLED.show();
 #define key132_release Keyboard.release(KEY_UP_ARROW);
-#define key133_press Keyboard.press(KEY_DOWN_ARROW);
+#define key133_press Keyboard.press(KEY_DOWN_ARROW);leds[56] = CRGB(random(255),random(255),random(255));leds[55] = CRGB(0,0,0);leds[48] = CRGB(0,0,0);leds[63] = CRGB(0,0,0);FastLED.show();
 #define key133_release Keyboard.release(KEY_DOWN_ARROW);
-#define key134_press Keyboard.press(KEY_RIGHT_ARROW);
+#define key134_press Keyboard.press(KEY_RIGHT_ARROW);leds[63] = CRGB(random(255),random(255),random(255));leds[55] = CRGB(0,0,0);leds[56] = CRGB(0,0,0);leds[48] = CRGB(0,0,0);FastLED.show();
 #define key134_release Keyboard.release(KEY_RIGHT_ARROW);
 //定义记录变量
 byte key11;
@@ -194,6 +197,8 @@ byte key133;
 byte key134;
 
 void setup() {
+  FastLED.addLeds<WS2812B, LED_PIN, GRB>(leds, NUM_LEDS);
+  //初始化LED
   //扫描输入IO设置
   pinMode(col1, INPUT_PULLUP);
   pinMode(col2, INPUT_PULLUP);
