@@ -1,28 +1,28 @@
 #include <Keyboard.h>
 #include "FastLED.h"
-#define LED_PIN     0
+#define LED_PIN     13
 #define NUM_LEDS    64
 
-#define col1 2
-#define col2 3
-#define col3 4
-#define col4 5
-#define line1 6
-#define line2 7
-#define line3 8
+#define col1 7
+#define col2 23
+#define col3 22
+#define col4 21
+#define line1 19
+#define line2 18
+#define line3 20
 #define line4 9
-#define line5 10
-#define line6 16
-#define line7 14
-#define line8 15
-#define line9 18
-#define line10 19
-#define line11 20
-#define line12 21
-#define line13 1
-#define line14 0
-#define line15 22
-#define line16 23
+#define line5 11
+#define line6 12
+#define line7 4
+#define line8 3
+#define line9 2
+#define line10 1
+#define line11 0
+#define line12 6
+#define line13 14
+#define line14 16
+#define line15 15
+#define line16 8
 CRGB leds[64];
 
 //定义按键按放命令
