@@ -29,99 +29,19 @@ byte arrow;
 //定义按键按放命令
 #define key11_release\
   Keyboard.release('1');\
-  switch(arrow){\
-    case 1:\
-      leds[0] = CRGB (0,0,0);\
-      break;\
-    case 4:\
-      leds[0] = CRGB (0,0,0);\
-      leds[1] = CRGB (0,0,0);\
-      leds[2] = CRGB (0,0,0);\
-      leds[3] = CRGB (0,0,0);\
-      leds[16] = CRGB (0,0,0);\
-      leds[17] = CRGB (0,0,0);\
-      leds[18] = CRGB (0,0,0);\
-      leds[19] = CRGB (0,0,0);\
-      leds[32] = CRGB (0,0,0);\
-      leds[33] = CRGB (0,0,0);\
-      leds[34] = CRGB (0,0,0);\
-      leds[35] = CRGB (0,0,0);\
-      leds[49] = CRGB (0,0,0);\
-      leds[50] = CRGB (0,0,0);\
-      leds[51] = CRGB (0,0,0);\
-  }\
+  leds[0] = CRGB (0,0,0);\
   FastLED.show();
 #define key11_press\
   Keyboard.press('1');\
-  switch(arrow){\
-    case 1:\
-      leds[0] = CRGB (133,0,133);\
-      break;\
-    case 4:\
-      leds[0] = CRGB (133,0,133);\
-      leds[1] = CRGB (133,0,133);\
-      leds[2] = CRGB (133,0,133);\
-      leds[3] = CRGB (133,0,133);\
-      leds[16] = CRGB (133,0,133);\
-      leds[17] = CRGB (133,0,133);\
-      leds[18] = CRGB (133,0,133);\
-      leds[19] = CRGB (133,0,133);\
-      leds[32] = CRGB (133,0,133);\
-      leds[33] = CRGB (133,0,133);\
-      leds[34] = CRGB (133,0,133);\
-      leds[35] = CRGB (133,0,133);\
-      leds[49] = CRGB (133,0,133);\
-      leds[50] = CRGB (133,0,133);\
-      leds[51] = CRGB (133,0,133);\
-  }\
+   leds[0] = CRGB (133,0,133);\
   FastLED.show();
 #define key12_press\
   Keyboard.press('q');\
-    switch(arrow){\
-    case 1:\
-      leds[7] = CRGB (133,0,133);\
-      break;\
-    case 4:\
-      leds[7] = CRGB (133,0,133);\
-      leds[8] = CRGB (133,0,133);\
-      leds[9] = CRGB (133,0,133);\
-      leds[10] = CRGB (133,0,133);\
-      leds[16] = CRGB (133,0,133);\
-      leds[17] = CRGB (133,0,133);\
-      leds[18] = CRGB (133,0,133);\
-      leds[19] = CRGB (133,0,133);\
-      leds[32] = CRGB (133,0,133);\
-      leds[33] = CRGB (133,0,133);\
-      leds[34] = CRGB (133,0,133);\
-      leds[35] = CRGB (133,0,133);\
-      leds[49] = CRGB (133,0,133);\
-      leds[50] = CRGB (133,0,133);\
-      leds[51] = CRGB (133,0,133);\
-  }\
+  leds[7] = CRGB (133,0,133);\
   FastLED.show();
 #define key12_release\
   Keyboard.release('q');\
-      switch(arrow){\
-    case 1:\
-      leds[7] = CRGB (0,0,0);\
-      break;\
-    case 4:\
-      leds[7] = CRGB (0,0,0);\
-      leds[8] = CRGB (0,0,0);\
-      leds[9] = CRGB (0,0,0);\
-      leds[10] = CRGB (0,0,0);\
-      leds[16] = CRGB (0,0,0);\
-      leds[17] = CRGB (0,0,0);\
-      leds[18] = CRGB (0,0,0);\
-      leds[19] = CRGB (0,0,0);\
-      leds[32] = CRGB (0,0,0);\
-      leds[33] = CRGB (0,0,0);\
-      leds[34] = CRGB (0,0,0);\
-      leds[35] = CRGB (0,0,0);\
-      leds[49] = CRGB (0,0,0);\
-      leds[50] = CRGB (0,0,0);\
-      leds[51] = CRGB (0,0,0);\
-  }\
+  leds[7] = CRGB (0,0,0);\
   FastLED.show();
 #define key13_press Keyboard.press('a');leds[8] = CRGB (133,0,133);FastLED.show();
 #define key13_release Keyboard.release('a');leds[8] = CRGB (0,0,0);FastLED.show();
