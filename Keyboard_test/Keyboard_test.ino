@@ -24,18 +24,114 @@
 #define line15 15
 #define line16 8
 CRGB leds[64];
+byte arrow;
 
 //定义按键按放命令
-#define key11_release Keyboard.release('1');leds[0] = CRGB (0,0,0);FastLED.show();
-#define key11_press Keyboard.press('1');leds[0] = CRGB (133,0,133);FastLED.show();
-#define key12_press Keyboard.press('q');leds[7] = CRGB (133,0,133);FastLED.show();
-#define key12_release Keyboard.release('q');leds[7] = CRGB (0,0,0);FastLED.show();
+#define key11_release\
+  Keyboard.release('1');\
+  switch(arrow){\
+    case 1:\
+      leds[0] = CRGB (0,0,0);\
+      break;\
+    case 4:\
+      leds[0] = CRGB (0,0,0);\
+      leds[1] = CRGB (0,0,0);\
+      leds[2] = CRGB (0,0,0);\
+      leds[3] = CRGB (0,0,0);\
+      leds[16] = CRGB (0,0,0);\
+      leds[17] = CRGB (0,0,0);\
+      leds[18] = CRGB (0,0,0);\
+      leds[19] = CRGB (0,0,0);\
+      leds[32] = CRGB (0,0,0);\
+      leds[33] = CRGB (0,0,0);\
+      leds[34] = CRGB (0,0,0);\
+      leds[35] = CRGB (0,0,0);\
+      leds[49] = CRGB (0,0,0);\
+      leds[50] = CRGB (0,0,0);\
+      leds[51] = CRGB (0,0,0);\
+  }\
+  FastLED.show();
+#define key11_press\
+  Keyboard.press('1');\
+  switch(arrow){\
+    case 1:\
+      leds[0] = CRGB (133,0,133);\
+      break;\
+    case 4:\
+      leds[0] = CRGB (133,0,133);\
+      leds[1] = CRGB (133,0,133);\
+      leds[2] = CRGB (133,0,133);\
+      leds[3] = CRGB (133,0,133);\
+      leds[16] = CRGB (133,0,133);\
+      leds[17] = CRGB (133,0,133);\
+      leds[18] = CRGB (133,0,133);\
+      leds[19] = CRGB (133,0,133);\
+      leds[32] = CRGB (133,0,133);\
+      leds[33] = CRGB (133,0,133);\
+      leds[34] = CRGB (133,0,133);\
+      leds[35] = CRGB (133,0,133);\
+      leds[49] = CRGB (133,0,133);\
+      leds[50] = CRGB (133,0,133);\
+      leds[51] = CRGB (133,0,133);\
+  }\
+  FastLED.show();
+#define key12_press\
+  Keyboard.press('q');\
+    switch(arrow){\
+    case 1:\
+      leds[7] = CRGB (133,0,133);\
+      break;\
+    case 4:\
+      leds[7] = CRGB (133,0,133);\
+      leds[8] = CRGB (133,0,133);\
+      leds[9] = CRGB (133,0,133);\
+      leds[10] = CRGB (133,0,133);\
+      leds[16] = CRGB (133,0,133);\
+      leds[17] = CRGB (133,0,133);\
+      leds[18] = CRGB (133,0,133);\
+      leds[19] = CRGB (133,0,133);\
+      leds[32] = CRGB (133,0,133);\
+      leds[33] = CRGB (133,0,133);\
+      leds[34] = CRGB (133,0,133);\
+      leds[35] = CRGB (133,0,133);\
+      leds[49] = CRGB (133,0,133);\
+      leds[50] = CRGB (133,0,133);\
+      leds[51] = CRGB (133,0,133);\
+  }\
+  FastLED.show();
+#define key12_release\
+  Keyboard.release('q');\
+      switch(arrow){\
+    case 1:\
+      leds[7] = CRGB (0,0,0);\
+      break;\
+    case 4:\
+      leds[7] = CRGB (0,0,0);\
+      leds[8] = CRGB (0,0,0);\
+      leds[9] = CRGB (0,0,0);\
+      leds[10] = CRGB (0,0,0);\
+      leds[16] = CRGB (0,0,0);\
+      leds[17] = CRGB (0,0,0);\
+      leds[18] = CRGB (0,0,0);\
+      leds[19] = CRGB (0,0,0);\
+      leds[32] = CRGB (0,0,0);\
+      leds[33] = CRGB (0,0,0);\
+      leds[34] = CRGB (0,0,0);\
+      leds[35] = CRGB (0,0,0);\
+      leds[49] = CRGB (0,0,0);\
+      leds[50] = CRGB (0,0,0);\
+      leds[51] = CRGB (0,0,0);\
+  }\
+  FastLED.show();
 #define key13_press Keyboard.press('a');leds[8] = CRGB (133,0,133);FastLED.show();
 #define key13_release Keyboard.release('a');leds[8] = CRGB (0,0,0);FastLED.show();
 #define key14_press Keyboard.press('z');leds[15] = CRGB (133,0,133);FastLED.show();
 #define key14_release Keyboard.release('z');leds[15] = CRGB (0,0,0);FastLED.show();
 //2
-#define key21_release Keyboard.release('2');leds[1] = CRGB (0,0,0);FastLED.show();
+#define key21_release\
+  Keyboard.release('2');\
+  leds[1] = CRGB (0,0,0);\
+  FastLED.show();
 #define key21_press Keyboard.press('2');leds[1] = CRGB (133,0,133);FastLED.show();
 #define key22_press Keyboard.press('w');leds[6] = CRGB (133,0,133);FastLED.show();
 #define key22_release Keyboard.release('w');leds[6] = CRGB (0,0,0);FastLED.show();
@@ -135,13 +231,43 @@ CRGB leds[64];
 #define key124_release Keyboard.release(KEY_RIGHT_SHIFT);leds[44] = CRGB (0,0,0);FastLED.show();
 //
 #define key131_release Keyboard.release(KEY_LEFT_ARROW);
-#define key131_press Keyboard.press(KEY_LEFT_ARROW);leds[48] = CRGB(random(255),random(255),random(255));leds[55] = CRGB(0,0,0);leds[56] = CRGB(0,0,0);leds[63] = CRGB(0,0,0);FastLED.show();
-#define key132_press Keyboard.press(KEY_UP_ARROW);leds[55] = CRGB(random(255),random(255),random(255));leds[48] = CRGB(0,0,0);leds[56] = CRGB(0,0,0);leds[63] = CRGB(0,0,0);FastLED.show();
-#define key132_release Keyboard.release(KEY_UP_ARROW);
-#define key133_press Keyboard.press(KEY_DOWN_ARROW);leds[56] = CRGB(random(255),random(255),random(255));leds[55] = CRGB(0,0,0);leds[48] = CRGB(0,0,0);leds[63] = CRGB(0,0,0);FastLED.show();
-#define key133_release Keyboard.release(KEY_DOWN_ARROW);
-#define key134_press Keyboard.press(KEY_RIGHT_ARROW);leds[63] = CRGB(random(255),random(255),random(255));leds[55] = CRGB(0,0,0);leds[56] = CRGB(0,0,0);leds[48] = CRGB(0,0,0);FastLED.show();
-#define key134_release Keyboard.release(KEY_RIGHT_ARROW);
+#define key131_press\
+  Keyboard.press(KEY_LEFT_ARROW);\
+  leds[48] = CRGB(random(255),random(255),random(255));\
+  leds[55] = CRGB(0,0,0);\
+  leds[56] = CRGB(0,0,0);\
+  leds[63] = CRGB(0,0,0);\
+  arrow = 1;\
+  FastLED.show();
+#define key132_press\
+  Keyboard.press(KEY_UP_ARROW);\
+  leds[55] = CRGB(random(255),random(255),random(255));\
+  leds[48] = CRGB(0,0,0);\
+  leds[56] = CRGB(0,0,0);\
+  leds[63] = CRGB(0,0,0);\
+  arrow = 2;\
+  FastLED.show();
+#define key132_release\
+  Keyboard.release(KEY_UP_ARROW);
+#define key133_press\
+  Keyboard.press(KEY_DOWN_ARROW);\
+  leds[56] = CRGB(random(255),random(255),random(255));\
+  leds[55] = CRGB(0,0,0);leds[48] = CRGB(0,0,0);\
+  leds[63] = CRGB(0,0,0);\
+  arrow = 3;\
+  FastLED.show();
+#define key133_release\
+  Keyboard.release(KEY_DOWN_ARROW);
+#define key134_press\
+  Keyboard.press(KEY_RIGHT_ARROW);\
+  leds[63] = CRGB(random(255),random(255),random(255));\
+  leds[55] = CRGB(0,0,0);\
+  leds[56] = CRGB(0,0,0);\
+  leds[48] = CRGB(0,0,0);\
+  arrow = 4;\
+  FastLED.show();
+#define key134_release\
+  Keyboard.release(KEY_RIGHT_ARROW);
 //定义记录变量
 byte key11;
 byte key12;
