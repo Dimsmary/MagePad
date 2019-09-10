@@ -267,6 +267,7 @@ void setup() {
   pinMode(line14,OUTPUT);
   pinMode(line15,OUTPUT);
   pinMode(line16,OUTPUT);
+  Serial.begin(9600);
 }
 
 void loop() {
