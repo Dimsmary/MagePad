@@ -13,11 +13,8 @@ PCB绘制使用的软件为：SprintLayout
 *主分支的代码为开发阶段，详细见开发笔记*
 ## NormalLight分支
 该分支存放稳定版本的代码。  
-Keyboard_test：  
-实现基本按键功能和发光功能。  
-Keyboard_test_KeyOnly：  
-只实现基本按键功能。
-
+Keyboard_test：实现基本按键功能和发光功能。  
+Keyboard_test_KeyOnly：只实现基本按键功能。  
 # 开发笔记
 目前正在开发按键可编程发光。  
 主分支开发不完整，建议使用NormalLight分支的代码。
