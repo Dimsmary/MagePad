@@ -1,5 +1,7 @@
 # 基本信息
-MagePad是一个适配Dan13 LaunchPad 工程的硬件工程。  
+MagePad是一个适配Dan12 LaunchPad 工程的硬件工程。  
+https://github.com/Dan12/Launchpad  
+https://agile-spire-1086.herokuapp.com/  
   
 PCB绘制使用的软件为：SprintLayout  
 单片机使用的是：ATMEGA 32U4  
